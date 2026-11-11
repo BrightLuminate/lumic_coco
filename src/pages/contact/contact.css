@@ -1,0 +1,912 @@
+/* ==================================================
+   CONTACT
+================================================== */
+
+.contact.section {
+  width: 100%;
+  min-height: 100vh;
+
+  padding-top: 5rem;
+  padding-bottom: 15rem;
+
+  box-sizing: border-box;
+
+  /* 가로 스크롤 방지 */
+  overflow-x: hidden;
+}
+
+
+/* ==================================================
+   INTRO
+================================================== */
+
+.contact-intro {
+  width: calc(100% - 2rem);
+  max-width: 700px;
+
+  margin: 0 auto 2rem;
+
+  position: relative;
+  top: 100px;
+
+  font-size: 1.1rem;
+  line-height: 1.6;
+
+  color: tomato;
+
+  text-align: center;
+
+  /* 한글 줄바꿈 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
+
+  box-sizing: border-box;
+}
+
+
+/* ==================================================
+   CONTAINER
+================================================== */
+
+.contact-container {
+  display: grid;
+
+  grid-template-columns: 5fr 7fr;
+
+  align-items: flex-start;
+
+  gap: 3rem 1.5rem;
+
+  width: 100%;
+
+  box-sizing: border-box;
+}
+
+
+/* ==================================================
+   CONTENT
+================================================== */
+
+.contact-content {
+  display: grid;
+
+  padding-top: 0.5rem;
+
+  row-gap: 2.5rem;
+
+  min-width: 0;
+}
+
+
+/* ==================================================
+   CONTACT CARD
+================================================== */
+
+.contact-card {
+  display: grid;
+
+  grid-template-columns: max-content minmax(0, 1fr);
+
+  align-items: center;
+
+  column-gap: 4.5rem;
+
+  position: relative;
+
+  top: 150px;
+  left: 100px;
+
+  min-width: 0;
+}
+
+
+/* ==================================================
+   ICON
+================================================== */
+
+.contact-icon {
+  width: 56px;
+  height: 56px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  border: 2px solid var(--border-color);
+
+  background-color: var(--container-color);
+
+  font-size: var(--h3-font-size);
+
+  display: grid;
+  place-items: center;
+
+  position: relative;
+}
+
+
+.contact-icon::after {
+  content: "";
+
+  position: absolute;
+
+  left: 100%;
+  top: 50%;
+
+  width: 40px;
+  height: 2px;
+
+  background-color: var(--border-color);
+}
+
+
+/* ==================================================
+   TEXT
+================================================== */
+
+.contact-title {
+  font-size: var(--large-font-size);
+
+  margin-bottom: 0.5rem;
+
+  word-break: keep-all;
+}
+
+
+.contact-data {
+  display: block;
+
+  max-width: 100%;
+
+  font-size: var(--small-font-size);
+
+  color: #555;
+
+  line-height: 1.5;
+
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+
+/* ==================================================
+   FORM
+================================================== */
+
+.contact-form {
+  row-gap: 2.25rem;
+
+  position: relative;
+}
+
+
+.contact-form-group {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 1.25rem;
+}
+
+
+.contact-form-div {
+  display: grid;
+
+  row-gap: 0.75rem;
+}
+
+
+.contact-form-label {
+  text-indent: 1.5rem;
+
+  font-size: var(--small-font-size);
+}
+
+
+.contact-form-label b {
+  color: var(--first-color);
+}
+
+
+.contact-form-input {
+  width: 100%;
+
+  background-color: var(--container-color);
+
+  color: var(--title-color);
+
+  padding: 1rem 1.5rem;
+
+  border-radius: 1.5rem;
+
+  box-sizing: border-box;
+}
+
+
+.contact-form-area {
+  resize: none;
+
+  height: 140px;
+}
+
+
+.contact-button {
+  justify-self: flex-end;
+
+  margin-top: 1.5rem;
+}
+
+
+.contact-message {
+  position: absolute;
+
+  right: 0.5rem;
+  bottom: 4.6rem;
+
+  font-size: var(--small-font-size);
+}
+
+
+/* ==================================================
+   COLORS
+================================================== */
+
+.color-red {
+  color: hsl(2, 76%, 53%);
+}
+
+
+.color-first {
+  color: var(--first-color);
+}
+
+
+/* ==================================================
+   SAVED MESSAGES
+================================================== */
+
+.saved-messages {
+  margin-top: 2rem;
+
+  padding: 1.5rem;
+
+  background-color: var(--container-color);
+
+  border-radius: 1.25rem;
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+  color: var(--text-color);
+
+  width: 100%;
+  max-width: 100%;
+
+  box-sizing: border-box;
+}
+
+
+.saved-messages h3 {
+  font-size: 1.5rem;
+
+  font-weight: var(--weight-700);
+
+  margin-bottom: 1rem;
+
+  color: var(--title-color);
+}
+
+
+.saved-message-card {
+  background-color: var(--body-color);
+
+  border: 1px solid var(--border-color, #333);
+
+  padding: 1rem;
+
+  border-radius: 1rem;
+
+  margin-bottom: 1rem;
+
+  transition:
+    transform 0.2s ease,
+    background 0.3s ease;
+
+  cursor: pointer;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  min-width: 0;
+}
+
+
+.saved-message-card:hover {
+  transform: translateY(-2px);
+
+  background-color: var(--container-color-alt, #1f1f1f);
+}
+
+
+.saved-message-card h4 {
+  font-size: 1rem;
+
+  font-weight: var(--weight-600);
+
+  color: var(--first-color);
+}
+
+
+.saved-message-card p {
+  font-size: 0.875rem;
+
+  color: var(--text-light-color);
+
+  margin-left: auto;
+
+  text-align: right;
+}
+
+
+/* ==================================================
+   DELETE BUTTON
+================================================== */
+
+.delete-btn {
+  background-color: red;
+
+  color: white;
+
+  padding: 0.35rem 0.75rem;
+
+  border: none;
+
+  border-radius: 999px;
+
+  font-size: 0.75rem;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: background 0.3s ease;
+
+  position: relative;
+
+  left: 10px;
+}
+
+
+.delete-btn:hover {
+  background-color: darkred;
+}
+
+
+/* ==================================================
+   PAGINATION
+================================================== */
+
+.pagination {
+  margin-top: 1rem;
+
+  display: flex;
+
+  gap: 0.5rem;
+
+  justify-content: center;
+}
+
+
+.pagination button {
+  background-color: var(--container-color);
+
+  color: var(--text-color);
+
+  border: 1px solid var(--border-color, #333);
+
+  padding: 0.5rem 0.75rem;
+
+  border-radius: 0.75rem;
+
+  cursor: pointer;
+
+  font-size: 0.875rem;
+
+  transition: background 0.3s ease;
+}
+
+
+.pagination button:hover {
+  background-color: var(--first-color);
+
+  color: var(--white-color);
+}
+
+
+.pagination .active {
+  background-color: var(--first-color);
+
+  color: var(--white-color);
+
+  font-weight: bold;
+}
+
+
+/* ==================================================
+   MODAL
+================================================== */
+
+.message-detail-modal {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(10, 10, 10, 0.8);
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 2000;
+}
+
+
+.modal-content button {
+  position: absolute;
+
+  top: 1rem;
+  right: 1rem;
+
+  background: none;
+
+  color: var(--white-color);
+
+  font-size: 1.25rem;
+
+  border: none;
+
+  cursor: pointer;
+
+  transition: color 0.3s ease;
+}
+
+
+.modal-content button:hover {
+  color: var(--first-color);
+}
+
+
+/* ==================================================
+   VIDEO
+================================================== */
+
+.contact-video {
+  width: 42%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  top: 100px;
+  left: 160px;
+}
+
+
+.contact-3d-video {
+  width: 95%;
+  max-width: 500px;
+
+  height: auto;
+
+  display: block;
+
+  border-radius: 12px;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+  opacity: 1;
+
+  z-index: 1;
+}
+
+
+/* ==================================================
+   TABLET
+   900px 이하
+================================================== */
+
+@media screen and (max-width: 900px) {
+
+  .contact.section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 8rem;
+  }
+
+
+  .contact-container {
+    grid-template-columns: 1fr;
+
+    width: 100%;
+
+    gap: 2rem;
+  }
+
+
+  .contact-intro {
+    top: 60px;
+
+    max-width: 650px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .contact-content {
+    width: 100%;
+
+    max-width: 600px;
+
+    margin: 5rem auto 0;
+  }
+
+
+  .contact-card {
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    grid-template-columns: 56px minmax(0, 1fr);
+
+    column-gap: 4rem;
+  }
+
+
+  .contact-video {
+    width: 100%;
+
+    top: 0;
+    left: 0;
+
+    margin: 3rem auto 0;
+  }
+}
+
+
+/* ==================================================
+   MOBILE
+   576px 이하
+================================================== */
+
+@media screen and (max-width: 576px) {
+
+  /*
+    중요:
+    모바일에서 전체 폭을 화면 안으로 제한
+  */
+
+  .contact.section {
+    width: 100%;
+    max-width: 100%;
+
+    min-height: 100vh;
+
+    padding:
+      4.5rem
+      1rem
+      5rem;
+
+    overflow-x: hidden;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =========================
+     INTRO
+  ========================= */
+
+  .contact-intro {
+    position: relative;
+
+    top: 4rem;
+    left: 0;
+
+    width: 100%;
+    max-width: 420px;
+
+    margin:
+      0
+      auto
+      2rem;
+
+    padding: 0 0.5rem;
+
+    box-sizing: border-box;
+
+    /*
+      모바일에서는 글자를 조금 작게
+      화면 크기에 따라 자동 조절
+    */
+    font-size: clamp(0.9rem, 4vw, 1rem);
+
+    line-height: 1.8;
+
+    text-align: center;
+
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+
+  /* =========================
+     CONTAINER
+  ========================= */
+
+  .contact-container {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr);
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    padding: 0;
+
+    gap: 0;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =========================
+     CONTACT CONTENT
+  ========================= */
+
+  .contact-content {
+    display: grid;
+
+    width: 100%;
+    max-width: 380px;
+
+    margin:
+      8rem
+      auto
+      0;
+
+    padding: 0;
+
+    row-gap: 2.5rem;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =========================
+     CONTACT CARD
+  ========================= */
+
+  .contact-card {
+    position: relative;
+
+    top: 0;
+    left: 0;
+
+    display: grid;
+
+    /*
+      아이콘 56px + 내용
+    */
+    grid-template-columns: 56px minmax(0, 1fr);
+
+    align-items: center;
+
+    /*
+      기존 4.5rem 때문에 모바일에서
+      오른쪽으로 넘쳤으므로 축소
+    */
+    column-gap: 2rem;
+
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    margin: 0;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =========================
+     ICON
+  ========================= */
+
+  .contact-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+
+  .contact-icon::after {
+    width: 25px;
+  }
+
+
+  /* =========================
+     CONTACT TEXT
+  ========================= */
+
+  .contact-card > div {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+
+  .contact-title {
+    max-width: 100%;
+
+    margin-bottom: 0.35rem;
+
+    font-size: clamp(0.95rem, 4vw, 1.05rem);
+
+    line-height: 1.4;
+
+    word-break: keep-all;
+  }
+
+
+  .contact-data {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: clamp(0.75rem, 3.2vw, 0.85rem);
+
+    line-height: 1.5;
+
+    word-break: keep-all;
+
+    /*
+      너무 긴 문자열은 화면 밖으로
+      나가지 않도록 처리
+    */
+    overflow-wrap: anywhere;
+  }
+
+
+  /* =========================
+     FORM
+  ========================= */
+
+  .contact-form {
+    width: 100%;
+  }
+
+
+  .contact-form-group {
+    grid-template-columns: 1fr;
+
+    width: 100%;
+  }
+
+
+  .contact-form-input {
+    width: 100%;
+
+    max-width: 100%;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =========================
+     VIDEO
+  ========================= */
+
+  .contact-video {
+    width: 100%;
+    max-width: 100%;
+
+    top: 0;
+    left: 0;
+
+    margin: 2rem auto 0;
+  }
+
+
+  .contact-3d-video {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  /* =========================
+     SAVED MESSAGE
+  ========================= */
+
+  .saved-messages {
+    width: 100%;
+    max-width: 100%;
+
+    box-sizing: border-box;
+  }
+
+
+  .saved-message-card {
+    width: 100%;
+    max-width: 100%;
+
+    box-sizing: border-box;
+  }
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+   400px 이하
+================================================== */
+
+@media screen and (max-width: 400px) {
+
+  .contact.section {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+
+  .contact-intro {
+    max-width: 350px;
+
+    padding: 0;
+
+    font-size: 0.88rem;
+
+    line-height: 1.75;
+  }
+
+
+  .contact-content {
+    max-width: 340px;
+  }
+
+
+  .contact-card {
+    grid-template-columns: 50px minmax(0, 1fr);
+
+    column-gap: 1.5rem;
+  }
+
+
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+
+  .contact-icon::after {
+    width: 20px;
+  }
+
+
+  .contact-title {
+    font-size: 0.95rem;
+  }
+
+
+  .contact-data {
+    font-size: 0.75rem;
+  }
+}

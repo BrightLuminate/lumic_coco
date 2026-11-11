@@ -1,0 +1,578 @@
+/* Portfolio.css */
+
+/* --- Variables --- */
+/* These variables should ideally be defined in a global CSS file or :root selector */
+:root {
+    --first-color: hsl(250, 69%, 61%);
+    --first-color-alt: hsl(250, 57%, 53%); /* A slightly darker shade for hover */
+    --title-color: hsl(250, 69%, 88%);
+    --text-color: hsl(250, 16%, 60%);
+    --text-color-light: hsl(250, 16%, 50%);
+    --body-color: hsl(250, 20%, 15%);
+    --container-color: hsl(250, 16%, 12%);
+    --border-color: hsl(250, 16%, 25%);
+
+    /* NEW: Darker modal background for screenshot style */
+    --modal-overlay-bg: rgba(0, 0, 0, 0.95); /* Much darker */
+    --modal-panel-bg: hsl(250, 15%, 10%); /* Background for info panel */
+
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --tiny-font-size: 0.75rem;
+
+    --font-medium: 500;
+    --font-semi-bold: 600;
+}
+
+
+/* --- General Section Styling --- */
+.portfolio.section {
+    padding-block: 4rem; /* Standard vertical padding for sections */
+}
+
+.section-title {
+    text-align: center;
+    font-size: var(--h1-font-size);
+    margin-bottom: 3rem;
+    color: var(--title-color);
+}
+
+.section-title span {
+    color: var(--first-color);
+}
+
+/* --- Category Filters --- */
+.portfolio-categories {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 0.5rem;
+    flex-wrap: wrap; /* Allows categories to wrap to the next line on smaller screens */
+}
+
+.category-button {
+    background-color: var(--container-color);
+    border: none;
+    padding: 0.75rem 1.25rem;
+    margin: 0;
+    cursor: pointer;
+    border-radius: 1rem;
+    color: var(--text-color);
+    font-size: var(--small-font-size);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.category-button:hover {
+    background-color: var(--first-color);
+    color: var(--body-color);
+}
+
+.category-active {
+    background-color: var(--first-color);
+    color: var(--body-color);
+    border: none; /* No border for active state */
+    padding: 0.75rem 1.25rem;
+    margin: 0;
+    cursor: pointer;
+    border-radius: 1rem;
+    font-size: var(--small-font-size);
+}
+
+.portfolio-container {
+  display: grid;
+  /* 기존 grid-template-columns 설정은 그대로 유지하되, 예시로 적어둡니다 */
+  grid-template-columns: repeat(3, 1fr); 
+  
+  /* 💡 핵심: 정렬 방식을 space-between에서 start로 변경 */
+  justify-content: start; 
+  
+  /* 카드 사이의 간격을 원하는 크기만큼 고정 (예: 2rem 또는 30px) */
+  gap: 2rem; 
+}
+
+.portfolio-card {
+    background-color: var(--container-color);
+    padding: 1.0rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    width: 90%;
+    max-width: 300px; /* Limits the max width of individual cards */
+    justify-self: center; /* Centers cards within their grid cells */
+    cursor: pointer; /* Indicates the card is clickable */
+}
+
+.portfolio-card:hover {
+    transform: translateY(-0.5rem); /* Slight lift effect on hover */
+}
+
+.portfolio-img-wrapper {
+    border-radius: 1.25rem;
+    overflow: hidden; /* Ensures image corners are rounded */
+    display: block;
+    margin-bottom: 1rem;
+    height: 200px; /* Fixed height for consistent card appearance */
+    display: flex; /* Use flexbox to center the image within the wrapper */
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-img {
+    width:100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill the wrapper, potentially cropping */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-img {
+    transform: scale(1.1); /* Zoom effect on image on card hover */
+}
+
+.portfolio-title {
+    font-size: 13px;
+    margin-block: 0.5rem 0.5rem; /* Margin above and below title */
+    color: var(--title-color);
+}
+
+.portfolio-description {
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.portfolio-skills {
+    background-color: var(--body-color);
+    padding: 0.4rem 0.4rem;
+    width: fit-content; /* Shrink to fit content */
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-block: 1rem;
+    flex-wrap: wrap; /* Allows skill icons to wrap to the next line */
+}
+
+.portfolio-skill {
+    height: 0.8rem; /* Fixed height for skill icons */
+}
+
+.portfolio-link {
+    color: var(--first-color);
+    display: inline-flex; /* Allows icon and text to sit side-by-side */
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: var(--font-medium);
+    transition: color 0.3s ease;
+    font-size: 15px;
+}
+
+.portfolio-link:hover {
+    color: var(--first-color-alt);
+}
+
+.link-icon {
+    font-size: 0.8rem;
+}
+
+/* --- MODAL STYLES (MODIFIED FOR SCREENSHOT DESIGN) --- */
+.portfolio-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-overlay-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.portfolio-modal.show-modal {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: transparent;
+    color: var(--text-color);
+    padding: 0;
+    width: 100%;
+    max-width: 2500px; /* Example: adjust as needed */
+    max-height: 85vh; /* 80% of viewport height */
+    border-radius: 1rem;
+    position: relative;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    flex-wrap: nowrap;
+    margin: 2rem auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    color: var(--text-color-light);
+    font-size: 1.0rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 100;
+}
+
+.modal-:hover {
+    color: var(--first-color);
+}
+
+.modal-media-section {
+    flex: 2;
+    min-width: 500px;
+    background-color: var(--container-color);
+    border-radius: 1rem 0 0 1rem;
+    /* MODIFIED: overflow-y is now on the section itself */
+    overflow-y: auto; /* This section will scroll if its content is too tall */
+    padding: 1rem; /* Padding inside media section */
+    position: relative;
+    /* MODIFIED: max-height for the entire media section */
+    max-height: 100%; /* Limit to the height of the modal content */
+}
+
+/* Custom Scrollbar for Media Section (now on .modal-media-section) */
+.modal-media-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-media-section::-webkit-scrollbar-track {
+    background: var(--container-color);
+    border-radius: 10px;
+}
+
+.modal-media-section::-webkit-scrollbar-thumb {
+    background: var(--first-color);
+    border-radius: 10px;
+}
+
+.modal-media-section::-webkit-scrollbar-thumb:hover {
+    background: var(--first-color-alt);
+}
+
+
+/* If you want to use the existing image/video classes, ensure they inherit styles or adjust them */
+.modal-image,
+.modal-video {
+    width: 100%;
+    height: auto;
+    /* MODIFIED: Remove max-height for individual items here if you want them to flow */
+    /* max-height: 100%; */ /* This might constrain individual items too much */
+    object-fit: contain; /* `contain` to show full image, `cover` if you prefer cropping */
+    border-radius: 0.5rem;
+    display: block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem; /* Space between media items */
+}
+
+/* Hide last item's margin-bottom if you use flex gap or different approach */
+.modal-image:last-child,
+.modal-video:last-child {
+    margin-bottom: 0;
+}
+
+
+/* MODIFIED: Grid for images/videos within media section - removed max-height and overflow */
+.modal-images-grid,
+.modal-videos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+
+    /* MODIFIED: Removed max-height and overflow-y */
+    /* max-height: calc(80vh - 2rem); */
+    /* overflow-y: auto; */
+    padding-right: 0.5rem; /* For potential scrollbar if content is very wide */
+    padding-top: 1rem; /* Padding at top of media grid */
+    padding-bottom: 1rem; /* Padding at bottom of media grid */
+}
+
+/* Removed custom scrollbar styles for individual grids as it's now on .modal-media-section */
+/* .modal-images-grid::-webkit-scrollbar,
+.modal-videos-grid::-webkit-scrollbar { ... } */
+
+
+.modal-text-content {
+    flex: 1;
+    min-width: 350px;
+    background-color: var(--modal-panel-bg);
+    border-radius: 0 1rem 1rem 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-height: 100%;
+    overflow-y: auto;
+    padding-right: calc(2rem + 8px);
+    position: relative;
+    border-left: 1px solid var(--border-color);
+}
+
+/* Custom Scrollbar for Text Content */
+.modal-text-content::-webkit-scrollbar {
+    width: 7px;
+}
+
+.modal-text-content::-webkit-scrollbar-track {
+    background: var(--modal-panel-bg);
+    border-radius: 10px;
+}
+
+.modal-text-content::-webkit-scrollbar-thumb {
+    background: var(--first-color);
+    border-radius: 10px;
+}
+
+.modal-text-content::-webkit-scrollbar-thumb:hover {
+    background: var(--first-color-alt);
+}
+
+
+.no-media-message {
+    text-align: center;
+    color: var(--text-color-light);
+    font-size: var(--normal-font-size);
+    padding: 2rem;
+    width: 100%;
+}
+
+/* --- Modal Text Content Specific Styles --- */
+.modal-content h3 {
+    font-size: 22px;
+    color: var(--title-color);
+    margin-bottom: 0.75rem;
+}
+
+.modal-full-description {
+    font-size: var(--normal-font-size);
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.modal-content ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    list-style-type: none;
+}
+
+.modal-content ul li {
+    font-size: var(--small-font-size);
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.2em;
+}
+
+/* Custom bullet point for main list items */
+.modal-content ul li::before {
+  content: '•';
+  color: var(--first-color);
+  font-size: 1.2em;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.modal-content ul ul li { /* Nested ul for features */
+    margin-bottom: 0.25rem;
+    padding-left: 0.5rem;
+    position: relative;
+}
+
+/* Custom bullet point for nested list items (features) */
+.modal-content ul ul li::before {
+  content: '-';
+  color: var(--text-color-light);
+  font-size: 1em;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.modal-content strong {
+    font-weight: var(--font-semi-bold);
+    color: var(--title-color);
+}
+
+.modal-content a {
+    color: var(--first-color);
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-weight: var(--font-medium);
+}
+
+.modal-content a:hover {
+    color: var(--first-color-alt);
+}
+
+/* Specific class for when modal-text-content is the ONLY content (e.g., no media) - ensure its usage is intentional in React */
+.modal-text-content.only-text {
+  margin: 0 auto;
+  max-width: 1700px;
+  flex: none;
+}
+
+
+/* --- Responsive Adjustments (MODIFIED) --- */
+@media screen and (max-width: 992px) { /* Adjust for larger tablets */
+    .modal-content {
+        flex-direction: column;
+        padding: 0;
+        gap: 1.5rem;
+        margin: 1.5rem auto;
+        align-items: stretch;
+        max-width: 90%;
+        max-height: 90vh;
+        border-radius: 1rem;
+    }
+
+    .modal-media-section {
+        min-width: unset;
+        width: 100%;
+        max-height: 50vh; /* MODIFIED: Max height for stacked media section */
+        border-radius: 1rem 1rem 0 0;
+        padding-right: 1rem;
+    }
+
+    .modal-text-content {
+        min-width: unset;
+        width: 100%;
+        max-height: 50vh;
+        overflow-y: auto;
+        border-radius: 0 0 1rem 1rem;
+        border-left: none;
+        border-top: 1px solid var(--border-color);
+        padding-right: calc(2rem + 8px);
+    }
+
+    /* MODIFIED: No max-height on individual grids when stacked, section itself scrolls */
+    /* .modal-images-grid,
+    .modal-videos-grid {
+        max-height: calc(50vh - 2rem);
+    } */
+
+    .modal-close {
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .portfolio-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 1rem auto;
+    }
+    .modal-close {
+        font-size: 1.2rem;
+        top: 0.75rem;
+        right: 0.75rem;
+    }
+    .modal-media-section {
+        max-height: 40vh; /* MODIFIED: Adjusted max height for stacked media section */
+    }
+    /* MODIFIED: No max-height on individual grids when stacked */
+    /* .modal-images-grid,
+    .modal-videos-grid {
+        max-height: calc(40vh - 2rem);
+    } */
+    .modal-text-content {
+        max-height: 40vh;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-categories {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .category-button {
+        margin-bottom: 0.5rem;
+        padding: 0.6rem 1rem;
+        font-size: var(--tiny-font-size);
+    }
+    .category-active {
+        padding: 0.6rem 1rem;
+        font-size: var(--tiny-font-size);
+    }
+
+    .modal-content {
+        padding: 0;
+        gap: 1rem;
+        margin: 0.5rem auto;
+        max-width: 98%;
+        max-height: 95vh;
+        border-radius: 0.75rem;
+    }
+    .modal-close {
+        font-size: 1rem;
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+    .modal-media-section {
+        max-height: 30vh; /* MODIFIED: Adjusted max height for stacked media section */
+        border-radius: 0.75rem 0.75rem 0 0;
+        padding: 0.75rem;
+    }
+    /* MODIFIED: No max-height on individual grids when stacked */
+    /* .modal-images-grid,
+    .modal-videos-grid {
+        max-height: calc(30vh - 1.5rem);
+        gap: 0.75rem;
+    } */
+    .modal-text-content {
+        max-height: 60vh;
+        padding: 1.5rem;
+        border-radius: 0 0 0.75rem 0.75rem;
+        padding-right: calc(1.5rem + 8px);
+    }
+    .modal-content h3 {
+        font-size: var(--h3-font-size);
+    }
+    .modal-full-description,
+    .modal-content p,
+    .modal-content ul li {
+        font-size: var(--tiny-font-size);
+    }
+}
