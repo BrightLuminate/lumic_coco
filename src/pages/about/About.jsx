@@ -25,7 +25,7 @@ const About = () => {
             </ul>
 
             <a
-              href="https://drive.google.com/file/d/19BnFXlf8qkGVFGRDzzxaDgMjhfcT95U_/view?usp=sharing"
+              href="https://drive.google.com/file/d/1Fv_jc0bw7ULV0aqxLxXJHL76hewKSvV0/view?usp=sharing"
               className="button"
             >
               Download CV
