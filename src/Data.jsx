@@ -446,7 +446,7 @@ export const sward = [
     id: 4,
     category: 'certificate',
     icon: <RiBriefcase4Fill />,
-    year: '2024.09.03',
+    year: '2026.11.12',
     title: '멀티미디어콘텐츠 제작 전문가(영상편집, 프리미어, 에펙 VFX) 수료증',
     desc: `- 그린컴퓨터아트학원 종로캠퍼스`,
   },
