@@ -1316,7 +1316,7 @@ const PREMIUM_PROJECTS = {
     work: 'VFX Compositing / 3D Modeling & Animation / Motion Graphics / Film Editing / Storyboard Design',
     extraLabel: 'SHOWREEL DISCIPLINES',
     extra: 'CGI / Texturing & Rendering / Physics Simulation / Typography / Sound Design / Visual Planning',
-    category: 'VFX Showreel / Motion Graphics Showreel / 3D Portfolio / Creative Portfolio',
+    category: 'Showreel',
     directions: [
       ['VFX Compositing & CG', '실사 장면과 CG 오브젝트를 결합하며 카메라 구도·크기·움직임·공간감의 조화를 고려한 VFX 합성 연습을 소개했습니다.'],
       ['3D Modeling, Animation & Dynamics', 'Cinema 4D와 Blender를 활용한 캐릭터 모델링·텍스처링·라이팅·렌더링, MoGraph·Cloner·물리 시뮬레이션 및 카메라 애니메이션 작업을 담았습니다.'],
@@ -1340,7 +1340,7 @@ const PREMIUM_PROJECTS = {
     work: 'Website Promotion / Visual Storytelling / Cinematic Editing / Typography / UI Showcase',
     extraLabel: 'VISUAL IDENTITY',
     extra: 'Space & Planet Motif / Dark Cinematic UI / Motion & Rhythm',
-    category: 'Web and App Design / Creative Portfolio / Website Promotion',
+    category: 'Storyboard / Planning & Design',
     directions: [
       ['Cosmic Visual Identity', '우주와 행성을 모티브로 검은 배경, 빛과 그래픽 요소, 타이포그래피를 조합해 LUMIC만의 다크 시네마틱 콘셉트를 구현했습니다.'],
       ['Website & Project Showcase', '메인 화면, 프로젝트 카테고리, 포트폴리오 갤러리, About Me, 기술 소개와 제작 프로세스를 일관된 화면 흐름으로 보여줍니다.'],
@@ -2270,13 +2270,8 @@ fullDescription: (
       'Storyboard & VFX Analysis / 영상 기획, 시퀀스 설계, 합성 품질 비교 분석',
     ],
     link: 'https://youtu.be/Ri9FkoxiPdA',
-    category: [
-      'VFX Compositing',
-      '3D Modeling / Animation',
-      'Motion Graphics',
-      'Cut Edit',
-      'Storyboard / Planning & Design',
-    ],
+    category: 'Showreel',
+    
     media: { videos: [projectImg37].filter(Boolean), images: [] },
   },
 
@@ -2298,7 +2293,7 @@ fullDescription: (
       'Cinematic Editing / 화면 전환과 음악 리듬·컷 타이밍을 결합한 프로모션 편집',
     ],
     link: 'https://youtu.be/RUzUE4aGtw0',
-    category: ['Web and App Design', 'Motion Graphics', 'Cut Edit'],
+    category: 'Storyboard / Planning & Design',
     media: { videos: [projectImg38].filter(Boolean), images: [] },
   },
 
@@ -2308,6 +2303,7 @@ fullDescription: (
 const completedProjectCategories = [
  
    'VFX Compositing',
+   'showreel',
     'AI-assisted VFX',
     'FX',
     '3D Modeling / Animation',
