@@ -425,18 +425,34 @@ export const sward = [
     title: '컴퓨터 활용 1급',
     desc: `- 대한상공회의소`,
   },
-
   {
     id: 2,
+    category: 'awardsd', // awardsd 로 컴퓨터 로  수상것들 
+    icon: <RiBriefcase4Fill />,
+    year: '2024.11.05',
+    title: '멀티미디어콘텐츠제작 전문가 자격취득(영상편집, 프리미어, 에펙 VFX) A 우수상',
+    desc: `- 미래융합교육원`,
+  },
+
+  {
+    id: 3,
     category: 'awardsd', // awardsd 로 컴퓨터 로  수상것들 
     icon: <RiBriefcase4Fill />,
     year: '2024.09.03',
     title: 'AI(인공지능) SW 풀스택 개방과정 프로젝트 최우수상',
     desc: `- 미래융합교육원`,
   },
+    {
+    id: 4,
+    category: 'certificate',
+    icon: <RiBriefcase4Fill />,
+    year: '2024.09.03',
+    title: '멀티미디어콘텐츠 제작 전문가(영상편집, 프리미어, 에펙 VFX) 수료증',
+    desc: `- 그린컴퓨터아트학원 종로캠퍼스`,
+  },
 
   {
-    id: 3,
+    id: 5,
     category: 'certificate',
     icon: <RiBriefcase4Fill />,
     year: '2024.09.03',
@@ -445,7 +461,7 @@ export const sward = [
   },
 
   {
-    id: 4,
+    id: 6,
     category: 'certificate',
     icon: <RiBriefcase4Fill />,
     year: '2021.10.08',
@@ -454,7 +470,7 @@ export const sward = [
   },
 
   {
-    id: 5,
+    id: 7,
     category: 'certificate',
     icon: <RiBriefcase4Fill />,
     year: '2022.05.22',
@@ -463,7 +479,7 @@ export const sward = [
   },
 
   {
-    id: 6,
+    id: 8,
     category: 'certificate',
     icon: <RiBriefcase4Fill />,
     year: '2022.05.29',
@@ -472,7 +488,7 @@ export const sward = [
   },
 
   {
-    id: 7,
+    id: 9,
     category: 'awards',
     icon: <RiBriefcase4Fill />,
     year: '2016.09.10',
@@ -481,7 +497,7 @@ export const sward = [
   },
 
   {
-    id: 8,
+    id: 10,
     category: 'awards',
     icon: <RiBriefcase4Fill />,
     year: '2017.09.07',
@@ -490,7 +506,7 @@ export const sward = [
   },
 
   {
-    id: 9,
+    id: 11,
     category: 'certificate',
     icon: <RiBriefcase4Fill />,
     year: '2022.04.22',
